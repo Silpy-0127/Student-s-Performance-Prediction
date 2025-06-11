@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
+    <title>Future</title>
+    <style>
+             * {
+        margin: 0px;
+    }
+        h1{
+            font-weight: bold;
+            color: black;
+            align-items: center;
+            justify-content: center;
+        }
+        body{
+            background-color: burlywood;
+            font-family: "Sedan SC", serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: darkcyan;
+            padding: 8px;
+        }
+        .menu {
+            text-decoration:none;
+            font-size: 18px;
+            color: whitesmoke;
+            margin-right: 30px;
+        }
+        .menu:hover {
+            color: black;
+        }
+        .container{
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        h2{
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            display: flex;
+            padding: 4px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body><div class="header" >
+    <h1>Student's Performance Prediction</h1>
+    <nav>
+     <a class ="menu" href="/">Home</a>
+     <a class ="menu" href="/abstract">Abstract</a>
+     <a class ="menu" href="/upload">Upload</a>
+     <a class ="menu" href="/preview">Preivew</a>
+     <a class ="menu" href="/prediction">Prediction</a>
+     <a class ="menu" href="/future">Future</a>
+    </nav>
+</div>
+<h2>Total gender</h2>
+</br></br>		
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['gender', 'precentage'],
+          ['Female',     60],
+          ['Male',      50]
+        ]);
+        var options = {
+          title: ' ',
+          colors: ['green', 'red'],
+          pieHole: 0.4,
+        };
+       var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <center><div id="donutchart" style="width: 900px; height: 500px;"></div></center>
+  </body>
+</html>
+	</br>
+</br>		
+<html>
+  <head>
+   <h2>students performance</h2>
+  </br></br>		
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ['result', 'Female', 'Male'],
+          ['Withdrawn', 21000, 23.3],
+          ['Fail', 24000, 4.5],
+          ['Pass', 30000, 14.3]
+        ]);
+        var options = {
+          width: 800,
+          chart: {
+            title: ' ',
+            subtitle: '',
+            colors: ['green', 'red']
+          },
+          bars: 'vertical', // Required for Material Bar Charts.
+          series: {
+            0: { axis: 'Female' }, // Bind series 0 to an axis named 'distance'.
+            1: { axis: 'Male' } // Bind series 1 to an axis named 'brightness'.
+          },
+          axes: {
+            x: {
+              Female: {label: 'parsecs'}, // Bottom x-axis.
+              Male: {side: 'top', label: 'Gender'} // Top x-axis.
+            }
+          }
+        };
+      var chart = new google.charts.Bar(document.getElementById('dual_x_div'));
+      chart.draw(data, options);
+    };
+    </script>
+  </head>
+  <body>
+    <center><div id="dual_x_div" style="width: 900px; height: 500px;"></div></center>
+  </body>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap" rel="stylesheet">
+    <title>Prediction</title>
+    <style>
+        * {
+            margin: 0px;
+    }
+    body{
+        background-image: url("../static/background.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: "Sedan SC", serif;
+            background-attachment: fixed;
+    }
+    .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: darkcyan;
+            padding: 8px;
+        }
+        .menu {
+            text-decoration:none;
+            font-size: 18px;
+            color: whitesmoke;
+            margin-right: 30px;
+        }
+        .menu:hover {
+            color: black;
+        }
+        .login-container {
+            width: 1000px;
+            margin-top: 100px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            backdrop-filter: blur(9px);
+            color: #fff;
+            border-radius: 12px;
+            padding: 30px 40px;
+        }
+    h1 {
+        margin-bottom: 20px;
+    }
+    label {
+        font-size: 20px;
+        width: 140px;
+    }
+    input[type="text"]{
+        width: 180px;
+        height: 20px;
+        font-size: 15px;
+        border-radius: 7px;
+        background: transparent;
+        color: white;
+        border-color: white;
+    }
+    .login-container h1{
+        border-bottom: 4px solid white; 
+        width: 20%;
+    }
+    p{
+        color: white;
+    }
+    .header h1{
+        color: black;
+    }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Student's Performance Prediction</h1>
+        <nav>
+          <a class ="menu" href="/">Home</a>
+          <a class ="menu" href="/abstract">Abstract</a>
+          <a class ="menu" href="/upload">Upload</a>
+          <a class ="menu" href="/charts">Charts</a>
+          <a class ="menu" href="/future">Future</a>
+        </nav>
+    </div>
+    <center>
+        <form action="/predict" method="POST">
+            <div class="login-container">
+                <h1>prediction</h1>
+                    <table>
+                      <tbody>
+                          <td>First Module:</td>
+                              <td>
+                                  <select type="text" name="code_module_x" method="post" required="required" placeholder="Gender" width="300" style="width: 300px"> 
+                                    <option value="0">AAA</option>
+                                    <option value="1">BBB</option> 
+                                    <option value="2">FFF</option>
+                                    <option value="3">CCC</option> 
+                                    <option value="4">EEE</option>
+                                    <option value="5">DDD</option> 
+                                    <option value="6">GGG</option>  
+                                  </select>
+                              </td>
+                              <td>Semester (First Module):</td>
+                              <td>
+                                  <select type="text" name="code_presentation_x" method="post" required="required" placeholder="Gender" width="300" style="width: 300px">   
+                                    <option value="0">2013J</option>
+                                    <option value="1">2014J</option> 
+                                    <option value="2">2014B</option>
+                                    <option value="3">2013B</option>                                                                 
+                                  </select>
+                              </td>
+                               </tbody>
+                          <!-- Row 1 -->
+                          <tbody>
+                              <td>Gender:</td>
+                              <td>
+                                  <select type="text" name="gender" method="post" required="required" placeholder="Gender" width="300" style="width: 300px">
+                               <option value="0">Female</option>
+                               <option value="1">Male</option>                    
+                                  </select>
+                              </td>
+                              <td>Region:</td>
+                              <td>
+                                  <select type="text" name="region" method="post" required="required" placeholder="Region" width="300" style="width: 300px">
+                                    <option value="0">East Anglian Region</option>
+                                    <option value="1">South Region</option> 
+                                    <option value="2">West Midlands Region</option>
+                                    <option value="3">South East Region</option> 
+                                    <option value="4">South West Region</option>
+                                    <option value="5">North Region</option> 
+                                    <option value="6">North Western Region</option>
+                                    <option value="7">East Midlands Region</option> 
+                                    <option value="8">Yorkshire Region</option>
+                                    <option value="9">Wales</option> 
+                                    <option value="10">London Region</option>
+                                    <option value="11">Scotland</option> 
+                                    <option value="12">Ireland</option>                                   
+                                  </select>
+                              </td>
+                          </tbody>
+                          </br>
+                          <!-- Row 2 -->
+                          <tbody>
+                              <td>Highest Education:</td>
+                              <td>
+                                  <select type="text" name="highest_education" method="post" required="required" placeholder="Gender" width="300" style="width: 300px">
+                                    <option value="0">A Level or Equivalent</option>
+                                    <option value="1">Lower Than A Level</option> 
+                                    <option value="2">HE Qualification</option>
+                                    <option value="3">No Formal quals</option> 
+                                    <option value="4">Post Graduate Qualification</option>   
+                                  </select>
+                              </td>
+                              <td>IMD Band:</td>
+                              <td>
+                                  <select type="text" name="imd_band" method="post" required="required" placeholder="Gender" width="300" style="width: 300px">
+                                    <option value="0">70-80%</option>
+                                    <option value="1">80-90%</option> 
+                                    <option value="2">50-60%</option>
+                                    <option value="3">90-100%</option> 
+                                    <option value="4">30-40%</option>
+                                    <option value="5">40-50%</option> 
+                                    <option value="6">60-70%</option>
+                                    <option value="7">0-10%</option> 
+                                    <option value="8">20-30%</option>
+                                    <option value="9">10-20</option>  
+                                  </select>
+                              </td>
+                          </tbody>
+                          </br>
+                          <!-- Row 3 -->
+                          <tbody>
+                              <td>Age Group:</td>
+                              <td>
+                                  <select type="text" name="age_band" method="post" required="required" placeholder="Age" width="300" style="width: 300px">
+                                        <option value="0">0-35</option>
+                                        <option value="1">35-55</option> 
+                                        <option value="2">55<=</option> 
+                                  </select>
+                              </td>
+                              <td>Number Of Previous Attempts:</td>
+                              <td>
+                                  <select type="text" name="num_of_prev_attempts" method="post" required="required" placeholder="Gender" width="300" style="width: 300px">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option> 
+                                    <option value="2">2</option>
+                                    <option value="3">3</option> 
+                                    <option value="4">4</option>
+                                    <option value="5">5</option> 
+                                    <option value="6">6</option>
+                                  </select>
+                              </td>
+                          </tbody>
+                          <!-- Row 4 --></br>
+                          <tbody>
+                              <td>studied_credits:</td>
+                              <td>
+                                <input type="text" type="text" name="studied_credits" placeholder="studied_credits" required="required" width="300" style="width: 290px"/ > 
+                              </td>
+                              <td>assessment_score:</td>
+                              <td>
+                               <input type="text" name="assessment_score" placeholder="assessment_score" required="required" width="300" style="width: 290px"/ > 
+                              </td>
+                          </tbody>
+                          <!-- Row 5 --></br>
+                          <tbody>
+                               <td>Second Module:</td>
+                              <td>
+                                  <select type="text" name="code_module_y" method="post" required="required" placeholder="Gender" width="300" style="width: 300px"> 
+                                    <option value="0">AAA</option>
+                                    <option value="1">BBB</option> 
+                                    <option value="2">FFF</option>
+                                    <option value="3">CCC</option> 
+                                    <option value="4">EEE</option>
+                                    <option value="5">DDD</option> 
+                                    <option value="6">GGG</option>  
+                                  </select>
+                              </td>
+                              <td>Semester (Second Module):</td>
+                              <td>
+                                  <select type="text" name="code_presentation_y" method="post" required="required" placeholder="Gender" width="300" style="width: 300px">   
+                                    <option value="0">2013J</option>
+                                    <option value="1">2014J</option> 
+                                    <option value="2">2014B</option>
+                                    <option value="3">2013B</option>      
+                                  </select>
+                              </td>
+                          </tbody>     
+                      </table>
+                      </br>
+                      </br>
+                      <div class="center">
+                        <center>  <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button> </center> 
+                    <br /><br />
+                  </div>
+              </form>
+        </form>
+        <h2>Prediction is :{{ prediction_text }}</h2>
+    </center>
+</body>
+</html>
