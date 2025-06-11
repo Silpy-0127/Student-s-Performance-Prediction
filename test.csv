@@ -1,0 +1,7 @@
+code_module_x,code_presentation_x_x,gender,region,highest_education,imd_band,age_band,num_of_prev_attempts,studied_credits,score,code_module_y,code_presentation_y_y,final_result
+AAA,2014J,F,South East Region,A Level or Equivalent,20-30%,0-35,1,60,86,AAA,2013J,Pass
+AAA,2014J,F,South East Region,A Level or Equivalent,20-30%,0-35,1,60,86,AAA,2014J,Pass
+AAA,2013J,F,West Midlands Region,HE Qualification,70-80%,0-35,0,60,75,AAA,2013J,Withdrawn
+AAA,2013J,F,West Midlands Region,HE Qualification,70-80%,0-35,0,60,75,AAA,2014J,Withdrawn
+AAA,2014J,M,East Anglian Region,A Level or Equivalent,30-40%,0-35,1,120,51,AAA,2013J,Fail
+AAA,2014J,M,East Anglian Region,A Level or Equivalent,30-40%,0-35,1,120,51,AAA,2014J,Fail
